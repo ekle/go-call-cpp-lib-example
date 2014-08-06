@@ -15,9 +15,8 @@ build:
 	# dynamic
 	# --------------------------------------------------------------------
 	gcc -shared -Wl,-soname,libtest.so -o libtest.so  libtest.o
-	export LD_LIBRARY_PATH=.
 	go build dynamic.go
-	ldd dynamic
+	LD_LIBRARY_PATH=. ldd dynamic
 	@echo
 	# --------------------------------------------------------------------
 	#  run both
