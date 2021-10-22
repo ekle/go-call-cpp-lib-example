@@ -8,8 +8,8 @@ build:
 	# static
 	# --------------------------------------------------------------------
 	ar rcs libtest.a libtest.o
-	go build static.go
-	ldd static
+	go build -ldflags="-extldflags=-static" static.go
+	ldd static || true
 	@echo
 	# --------------------------------------------------------------------
 	# dynamic
